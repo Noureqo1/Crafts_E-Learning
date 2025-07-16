@@ -33,30 +33,6 @@ I will use the `flutter_launcher_icons` package (version ^0.13.1) to automatical
 - If the package becomes unmaintained, we'll need to find an alternative solution
 - Initial setup requires proper configuration for both platforms
 
-## Implementation
-
-1. Add the package to `pubspec.yaml` under `dev_dependencies`:
-
-   ```yaml
-   dev_dependencies:
-     flutter_launcher_icons: ^0.13.1
-   ```
-
-2. Configure the package in `pubspec.yaml`:
-
-   ```yaml
-   flutter_icons:
-     android: "launcher_icon"
-     ios: true
-     image_path: "assets/icon/icon.png"
-   ```
-
-3. Run the generator:
-
-   ```bash
-   flutter pub run flutter_launcher_icons
-   ```
-
 ## Alternatives Considered
 
 ### 1. Manual Icon Generation

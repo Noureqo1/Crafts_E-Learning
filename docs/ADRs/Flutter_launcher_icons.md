@@ -2,15 +2,15 @@
 
 ## Status
 
-Proposed
+Accepted
 
 ## Context
 
-We need to manage and generate app launcher icons for both Android and iOS platforms in our Flutter application. Manually creating and maintaining multiple icon sizes for different devices and platforms is time-consuming and error-prone.
+I need to manage and generate app launcher icons for both Android and iOS platforms in our Flutter application. Manually creating and maintaining multiple icon sizes for different devices and platforms is time-consuming and error-prone.
 
 ## Decision
 
-We will use the `flutter_launcher_icons` package (version ^0.13.1) to automatically generate app launcher icons from a single source image.
+I will use the `flutter_launcher_icons` package (version ^0.13.1) to automatically generate app launcher icons from a single source image.
 
 ## Consequences
 

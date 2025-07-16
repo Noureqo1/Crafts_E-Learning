@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_ai_chatbot/screen/splash_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+      
   runApp(const MyApp());
 }
 
@@ -9,6 +18,9 @@ class MyApp extends StatelessWidget {
 
     @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: Text("hallo")),);
+    
+    return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SplashScreen(),);
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_ai_chatbot/screen/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
 
     @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: Text("hallo")),);
+    
+    return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SplashScreen(),);
   }
 }

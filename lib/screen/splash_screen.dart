@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_chatbot/helper/global.dart';
 import 'package:flutter_ai_chatbot/screen/home_screen.dart';
+import 'package:flutter_ai_chatbot/screen/onboarding.dart';
 import 'package:flutter_ai_chatbot/widgets/custom_loading.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ void initState() {
   Future.delayed(const Duration(seconds: 3), () {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
+      MaterialPageRoute(builder: (context) => const OnboardingScreen()),
     );
   });
 } 

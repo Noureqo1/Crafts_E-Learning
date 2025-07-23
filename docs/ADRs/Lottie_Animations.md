@@ -36,41 +36,6 @@ I will use the `lottie` package (version ^2.7.0) to implement animations in our 
 - Complex animations might have performance impacts on lower-end devices
 - Requires proper error handling for animation loading states
 
-## Implementation
-
-1. Add the package to `pubspec.yaml` under `dependencies`:
-
-   ```yaml
-   dependencies:
-     lottie: ^2.7.0
-   ```
-
-2. Basic usage in code:
-
-   ```dart
-   import 'package:lottie/lottie.dart';
-
-   class MyAnimatedWidget extends StatelessWidget {
-     @override
-     Widget build(BuildContext context) {
-       return Lottie.asset(
-         'assets/animations/animation.json',
-         width: 200,
-         height: 200,
-         fit: BoxFit.fill,
-       );
-     }
-   }
-   ```
-
-3. Add animation JSON files to your assets in `pubspec.yaml`:
-
-   ```yaml
-   flutter:
-     assets:
-       - assets/animations/
-   ```
-
 ## Alternatives Considered
 
 1. **Rive (formerly Flare)**:

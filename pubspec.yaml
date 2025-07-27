@@ -31,6 +31,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Hive
+  hive: ^4.0.0-dev.2
+  isar_flutter_libs: ^4.0.0-dev.13
+  path_provider: ^2.1.0
+
 # lottie animation
   lottie: ^3.3.1
   

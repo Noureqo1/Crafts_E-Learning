@@ -36,6 +36,9 @@ dependencies:
   isar_flutter_libs: ^4.0.0-dev.13
   path_provider: ^2.1.0
 
+  # get package
+  get: ^4.7.2
+
 # lottie animation
   lottie: ^3.3.1
   
@@ -60,8 +63,6 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
-# lottie animation
-  lottie: ^3.3.1
 
 # The following section is specific to Flutter packages.
 flutter:

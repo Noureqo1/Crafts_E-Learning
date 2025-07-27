@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ai_chatbot/helper/global.dart';
+import 'package:flutter_ai_chatbot/helper/pref.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 @override
 void initState() {
+
+  Pref.showOnboarding = false;
   super.initState();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 } 

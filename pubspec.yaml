@@ -39,8 +39,36 @@ dependencies:
   # get package
   get: ^4.7.2
 
-# lottie animation
+  # animate package
+  flutter_animate: ^4.2.0
+
+  # lottie animation
   lottie: ^3.3.1
+  
+  # Firebase
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  firebase_storage: ^11.6.0
+  
+  # Image and Video Picker
+  image_picker: ^1.0.7
+  video_player: ^2.8.1
+  chewie: ^1.7.4
+  cached_network_image: ^3.3.0
+  
+  # UI Components
+  flutter_svg: ^2.0.10+1
+  carousel_slider: ^4.2.1
+  shimmer: ^3.0.0
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

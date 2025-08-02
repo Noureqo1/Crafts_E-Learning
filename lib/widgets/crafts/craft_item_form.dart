@@ -5,7 +5,7 @@ import '../../../models/craft_item.dart';
 import '../../../services/marketplace_service.dart';
 
 class CraftItemForm extends StatefulWidget {
-  const CraftItemForm({Key? key}) : super(key: key);
+  const CraftItemForm({super.key});
 
   @override
   _CraftItemFormState createState() => _CraftItemFormState();

@@ -5,7 +5,7 @@ import '../../../services/course_service.dart';
 import '../../../models/course.dart';
 
 class CourseUploadForm extends StatefulWidget {
-  const CourseUploadForm({Key? key}) : super(key: key);
+  const CourseUploadForm({super.key});
 
   @override
   _CourseUploadFormState createState() => _CourseUploadFormState();

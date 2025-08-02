@@ -5,9 +5,9 @@ class MarketplaceList extends StatelessWidget {
   final List<CraftItem> items;
 
   const MarketplaceList({
-    Key? key,
+    super.key,
     required this.items,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

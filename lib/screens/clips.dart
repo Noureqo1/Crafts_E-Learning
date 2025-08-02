@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class ClipsScreen extends StatefulWidget {
-  const ClipsScreen({Key? key}) : super(key: key);
+  const ClipsScreen({super.key});
 
   @override
   _ClipsScreenState createState() => _ClipsScreenState();

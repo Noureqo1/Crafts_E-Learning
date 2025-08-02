@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_ai_chatbot/helper/global.dart';
 import 'package:get/get.dart';
 import 'package:flutter_ai_chatbot/helper/pref.dart';
 import 'package:flutter_ai_chatbot/screens/splash_screen.dart';
@@ -11,12 +12,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 class Themes {
   static final light = ThemeData.light().copyWith(
     primaryColor: Colors.blue,
-    useMaterial3: true,
   );
   
   static final dark = ThemeData.dark().copyWith(
     primaryColor: Colors.blue[800],
-    useMaterial3: true,
   );
 }
 
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'AI Chatbot',
+      title: appName,
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: Pref.isDarkMode ? ThemeMode.dark : ThemeMode.light,

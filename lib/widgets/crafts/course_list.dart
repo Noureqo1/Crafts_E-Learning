@@ -5,9 +5,9 @@ class CourseList extends StatelessWidget {
   final List<Course> courses;
 
   const CourseList({
-    Key? key,
+    super.key,
     required this.courses,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

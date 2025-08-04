@@ -157,32 +157,64 @@ class _ClipsScreenState extends State<ClipsScreen> {
   }
 
   Widget _buildVideoPlayer(String videoUrl) {
-    return FutureBuilder<ChewieController>(
+    return FutureBuilder<ChewieController?>(
       future: _initializePlayer(File(videoUrl)),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return _buildErrorWidget('Error loading video: ${snapshot.error}');
+        } else if (snapshot.hasData && snapshot.data != null) {
           return Chewie(controller: snapshot.data!);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return _buildErrorWidget('Failed to initialize video player');
         }
       },
     );
   }
 
-  Future<ChewieController> _initializePlayer(File videoFile) async {
-    final videoPlayerController = VideoPlayerController.file(videoFile);
-    await videoPlayerController.initialize();
-    
-    return ChewieController(
-      videoPlayerController: videoPlayerController,
-      autoPlay: false,
-      looping: false,
-      showControls: true,
-      allowFullScreen: true,
-      allowMuting: false,
-      aspectRatio: videoPlayerController.value.aspectRatio,
-      placeholder: Container(color: Colors.black),
+  Widget _buildErrorWidget(String message) {
+    return Container(
+      color: Colors.black,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.error_outline, color: Colors.white, size: 48),
+            const SizedBox(height: 16),
+            Text(
+              message,
+              style: const TextStyle(color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
     );
+  }
+
+  Future<ChewieController?> _initializePlayer(File videoFile) async {
+    try {
+      final videoPlayerController = VideoPlayerController.file(videoFile);
+      await videoPlayerController.initialize();
+      
+      return ChewieController(
+        videoPlayerController: videoPlayerController,
+        autoPlay: false,
+        looping: false,
+        showControls: true,
+        allowFullScreen: true,
+        allowMuting: false,
+        aspectRatio: videoPlayerController.value.aspectRatio,
+        placeholder: Container(color: Colors.black),
+        errorBuilder: (context, errorMessage) {
+          return _buildErrorWidget(errorMessage);
+        },
+      );
+    } catch (e) {
+      debugPrint('Error initializing video player: $e');
+      return null;
+    }
   }
 
   Widget _buildSideBar(int index) {

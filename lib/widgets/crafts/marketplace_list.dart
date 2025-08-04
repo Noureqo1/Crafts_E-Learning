@@ -12,12 +12,12 @@ class MarketplaceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(6),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.75,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
+        childAspectRatio: 0.60,
+        crossAxisSpacing: 6,
+        mainAxisSpacing: 6,
       ),
       itemCount: items.length,
       itemBuilder: (context, index) {
@@ -130,7 +130,7 @@ class MarketplaceList extends StatelessWidget {
                     Text(
                       'by ${item.sellerName}',
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 10,
                         color: Colors.grey[600],
                       ),
                       maxLines: 1,
@@ -145,13 +145,13 @@ class MarketplaceList extends StatelessWidget {
                           item.formattedPrice,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 10,
                             color: Colors.green,
                           ),
                         ),
                         // Add to Cart Button
                         IconButton(
-                          icon: const Icon(Icons.add_shopping_cart, size: 20),
+                          icon: const Icon(Icons.add_shopping_cart, size: 16),
                           onPressed: item.isAvailable
                               ? () {
                                   // Add to cart functionality

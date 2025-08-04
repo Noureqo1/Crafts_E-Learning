@@ -15,7 +15,7 @@ class CourseList extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.8,
+        childAspectRatio: 0.6,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
       ),

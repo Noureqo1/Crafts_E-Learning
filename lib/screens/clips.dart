@@ -12,7 +12,60 @@ class ClipsScreen extends StatefulWidget {
 }
 
 class _ClipsScreenState extends State<ClipsScreen> {
-  final List<Map<String, dynamic>> _clips = [];
+  final List<Map<String, dynamic>> _clips = [
+    {
+      'title': 'Dovetail Joint Masterclass',
+      'description': 'Learn how to create perfect dovetail joints with hand tools',
+      'likes': 1243,
+      'comments': 87,
+      'shares': 45,
+      'videoUrl': 'assets/videos/dovetail_joint.mp4',
+      'isPlaying': false,
+      'user': 'MasterCarpenter',
+      'userAvatar': 'https://example.com/avatars/master_carpenter.jpg',
+      'duration': '2:45',
+      'views': '45.2K',
+    },
+    {
+      'title': 'Sharpening Chisels Like a Pro',
+      'description': 'Step-by-step guide to getting razor-sharp chisels',
+      'likes': 987,
+      'comments': 56,
+      'shares': 32,
+      'videoUrl': 'assets/videos/sharpening_chisels.mp4',
+      'isPlaying': false,
+      'user': 'WoodWorksPro',
+      'userAvatar': 'https://example.com/avatars/woodworks_pro.jpg',
+      'duration': '3:12',
+      'views': '32.8K',
+    },
+    {
+      'title': 'Building a Rustic Coffee Table',
+      'description': 'From rough lumber to finished piece in one day',
+      'likes': 2456,
+      'comments': 134,
+      'shares': 89,
+      'videoUrl': 'assets/videos/coffee_table_build.mp4',
+      'isPlaying': false,
+      'user': 'RusticCrafts',
+      'userAvatar': 'https://example.com/avatars/rustic_crafts.jpg',
+      'duration': '4:30',
+      'views': '78.5K',
+    },
+    {
+      'title': 'Japanese Joinery Techniques',
+      'description': 'Traditional Japanese woodworking joinery explained',
+      'likes': 1789,
+      'comments': 92,
+      'shares': 67,
+      'videoUrl': 'assets/videos/japanese_joinery.mp4',
+      'isPlaying': false,
+      'user': 'EasternWoodcraft',
+      'userAvatar': 'https://example.com/avatars/eastern_woodcraft.jpg',
+      'duration': '5:18',
+      'views': '92.3K',
+    },
+  ];
   final PageController _pageController = PageController();
   final ImagePicker _picker = ImagePicker();
 

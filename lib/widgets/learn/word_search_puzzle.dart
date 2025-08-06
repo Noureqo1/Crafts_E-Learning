@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class WordSearchPuzzle extends StatefulWidget {
   final List<String> words;
   
-  const WordSearchPuzzle({Key? key, required this.words}) : super(key: key);
+  const WordSearchPuzzle({super.key, required this.words});
 
   @override
   _WordSearchPuzzleState createState() => _WordSearchPuzzleState();

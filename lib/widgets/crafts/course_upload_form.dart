@@ -5,7 +5,7 @@ import '../../../services/course_service.dart';
 import '../../../models/course.dart';
 
 class CourseUploadForm extends StatefulWidget {
-  const CourseUploadForm({Key? key}) : super(key: key);
+  const CourseUploadForm({super.key});
 
   @override
   _CourseUploadFormState createState() => _CourseUploadFormState();
@@ -130,168 +130,165 @@ class _CourseUploadFormState extends State<CourseUploadForm> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-        left: 16,
-        right: 16,
-        top: 16,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Create New Course'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Text(
-              'Create New Course',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            
-            // Course Title
-            TextFormField(
-              controller: _titleController,
-              decoration: const InputDecoration(
-                labelText: 'Course Title',
-                border: OutlineInputBorder(),
-              ),
-              validator: (value) =>
-                  value?.isEmpty ?? true ? 'Please enter a title' : null,
-            ),
-            const SizedBox(height: 16),
-            
-            // Course Description
-            TextFormField(
-              controller: _descriptionController,
-              decoration: const InputDecoration(
-                labelText: 'Description',
-                border: OutlineInputBorder(),
-                alignLabelWithHint: true,
-              ),
-              maxLines: 3,
-              validator: (value) =>
-                  value?.isEmpty ?? true ? 'Please enter a description' : null,
-            ),
-            const SizedBox(height: 16),
-            
-            // Instructor Name
-            TextFormField(
-              controller: _instructorNameController,
-              decoration: const InputDecoration(
-                labelText: 'Your Name',
-                border: OutlineInputBorder(),
-              ),
-              validator: (value) =>
-                  value?.isEmpty ?? true ? 'Please enter your name' : null,
-            ),
-            const SizedBox(height: 16),
-            
-            // Category Dropdown
-            DropdownButtonFormField<String>(
-              value: _categoryController.text.isEmpty ? null : _categoryController.text,
-              decoration: const InputDecoration(
-                labelText: 'Category',
-                border: OutlineInputBorder(),
-              ),
-              items: _categories.map((category) {
-                return DropdownMenuItem(
-                  value: category,
-                  child: Text(category),
-                );
-              }).toList(),
-              onChanged: (value) {
-                if (value != null) {
-                  _categoryController.text = value;
-                }
-              },
-              validator: (value) =>
-                  value?.isEmpty ?? true ? 'Please select a category' : null,
-            ),
-            const SizedBox(height: 20),
-            
-            // Course Image
-            const Text('Course Image:', style: TextStyle(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            InkWell(
-              onTap: _pickImage,
-              child: Container(
-                height: 120,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Course Title
+              TextFormField(
+                controller: _titleController,
+                decoration: const InputDecoration(
+                  labelText: 'Course Title',
+                  border: OutlineInputBorder(),
                 ),
-                child: _imagePath != null
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          _imagePath!,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
+                validator: (value) =>
+                    value?.isEmpty ?? true ? 'Please enter a title' : null,
+              ),
+              const SizedBox(height: 16),
+              
+              // Course Description
+              TextFormField(
+                controller: _descriptionController,
+                decoration: const InputDecoration(
+                  labelText: 'Description',
+                  border: OutlineInputBorder(),
+                  alignLabelWithHint: true,
+                ),
+                maxLines: 3,
+                validator: (value) =>
+                    value?.isEmpty ?? true ? 'Please enter a description' : null,
+              ),
+              const SizedBox(height: 16),
+              
+              // Instructor Name
+              TextFormField(
+                controller: _instructorNameController,
+                decoration: const InputDecoration(
+                  labelText: 'Your Name',
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) =>
+                    value?.isEmpty ?? true ? 'Please enter your name' : null,
+              ),
+              const SizedBox(height: 16),
+              
+              // Category Dropdown
+              DropdownButtonFormField<String>(
+                value: _categoryController.text.isEmpty ? null : _categoryController.text,
+                decoration: const InputDecoration(
+                  labelText: 'Category',
+                  border: OutlineInputBorder(),
+                ),
+                items: _categories.map((category) {
+                  return DropdownMenuItem(
+                    value: category,
+                    child: Text(category),
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  if (value != null) {
+                    _categoryController.text = value;
+                  }
+                },
+                validator: (value) =>
+                    value?.isEmpty ?? true ? 'Please select a category' : null,
+              ),
+              const SizedBox(height: 20),
+              
+              // Course Image
+              const Text('Course Image:', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              InkWell(
+                onTap: _pickImage,
+                child: Container(
+                  height: 120,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: _imagePath != null
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            _imagePath!,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                          ),
+                        )
+                      : const Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.add_photo_alternate, size: 40),
+                            Text('Add Course Image'),
+                          ],
                         ),
-                      )
-                    : const Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.add_photo_alternate, size: 40),
-                          Text('Add Course Image'),
-                        ],
-                      ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            
-            // Video Upload
-            const Text('Course Video (Optional):', style: TextStyle(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            OutlinedButton.icon(
-              onPressed: _pickVideo,
-              icon: const Icon(Icons.video_library),
-              label: Text(_videoPath != null ? 'Change Video' : 'Add Video'),
-            ),
-            if (_videoPath != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Text(
-                  'Video selected: ${_videoPath!.split('/').last}',
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
                 ),
               ),
-            const SizedBox(height: 16),
-            
-            // PDF Upload
-            const Text('Course Materials (PDF, Optional):', style: TextStyle(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            OutlinedButton.icon(
-              onPressed: _pickPdf,
-              icon: const Icon(Icons.picture_as_pdf),
-              label: Text(_pdfPath != null ? 'Change PDF' : 'Add PDF'),
-            ),
-            if (_pdfPath != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Text(
-                  'PDF selected: ${_pdfPath!.split('/').last}',
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+              const SizedBox(height: 16),
+              
+              // Video Upload
+              const Text('Course Video (Optional):', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              OutlinedButton.icon(
+                onPressed: _pickVideo,
+                icon: const Icon(Icons.video_library),
+                label: Text(_videoPath != null ? 'Change Video' : 'Add Video'),
+              ),
+              if (_videoPath != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    'Video selected: ${_videoPath!.split('/').last}',
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
                 ),
+              const SizedBox(height: 16),
+              
+              // PDF Upload
+              const Text('Course Materials (PDF, Optional):', style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              OutlinedButton.icon(
+                onPressed: _pickPdf,
+                icon: const Icon(Icons.picture_as_pdf),
+                label: Text(_pdfPath != null ? 'Change PDF' : 'Add PDF'),
               ),
-            const SizedBox(height: 24),
-            
-            // Submit Button
-            ElevatedButton(
-              onPressed: _isLoading ? null : _submitForm,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                backgroundColor: Theme.of(context).primaryColor,
-                foregroundColor: Colors.white,
+              if (_pdfPath != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    'PDF selected: ${_pdfPath!.split('/').last}',
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                ),
+              const SizedBox(height: 24),
+              
+              // Submit Button
+              ElevatedButton(
+                onPressed: _isLoading ? null : _submitForm,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  backgroundColor: Theme.of(context).primaryColor,
+                  foregroundColor: Colors.white,
+                ),
+                child: _isLoading
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : const Text('Create Course', style: TextStyle(fontSize: 16)),
               ),
-              child: _isLoading
-                  ? const CircularProgressIndicator(color: Colors.white)
-                  : const Text('Create Course', style: TextStyle(fontSize: 16)),
-            ),
-            const SizedBox(height: 16),
-          ],
+              const SizedBox(height: 16),
+            ],
+          ),
         ),
       ),
     );

@@ -5,14 +5,67 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class ClipsScreen extends StatefulWidget {
-  const ClipsScreen({Key? key}) : super(key: key);
+  const ClipsScreen({super.key});
 
   @override
   _ClipsScreenState createState() => _ClipsScreenState();
 }
 
 class _ClipsScreenState extends State<ClipsScreen> {
-  final List<Map<String, dynamic>> _clips = [];
+  final List<Map<String, dynamic>> _clips = [
+    {
+      'title': 'Dovetail Joint Masterclass',
+      'description': 'Learn how to create perfect dovetail joints with hand tools',
+      'likes': 1243,
+      'comments': 87,
+      'shares': 45,
+      'videoUrl': 'assets/videos/dovetail_joint.mp4',
+      'isPlaying': false,
+      'user': 'MasterCarpenter',
+      'userAvatar': 'https://example.com/avatars/master_carpenter.jpg',
+      'duration': '2:45',
+      'views': '45.2K',
+    },
+    {
+      'title': 'Sharpening Chisels Like a Pro',
+      'description': 'Step-by-step guide to getting razor-sharp chisels',
+      'likes': 987,
+      'comments': 56,
+      'shares': 32,
+      'videoUrl': 'assets/videos/sharpening_chisels.mp4',
+      'isPlaying': false,
+      'user': 'WoodWorksPro',
+      'userAvatar': 'https://example.com/avatars/woodworks_pro.jpg',
+      'duration': '3:12',
+      'views': '32.8K',
+    },
+    {
+      'title': 'Building a Rustic Coffee Table',
+      'description': 'From rough lumber to finished piece in one day',
+      'likes': 2456,
+      'comments': 134,
+      'shares': 89,
+      'videoUrl': 'assets/videos/coffee_table_build.mp4',
+      'isPlaying': false,
+      'user': 'RusticCrafts',
+      'userAvatar': 'https://example.com/avatars/rustic_crafts.jpg',
+      'duration': '4:30',
+      'views': '78.5K',
+    },
+    {
+      'title': 'Japanese Joinery Techniques',
+      'description': 'Traditional Japanese woodworking joinery explained',
+      'likes': 1789,
+      'comments': 92,
+      'shares': 67,
+      'videoUrl': 'assets/videos/japanese_joinery.mp4',
+      'isPlaying': false,
+      'user': 'EasternWoodcraft',
+      'userAvatar': 'https://example.com/avatars/eastern_woodcraft.jpg',
+      'duration': '5:18',
+      'views': '92.3K',
+    },
+  ];
   final PageController _pageController = PageController();
   final ImagePicker _picker = ImagePicker();
 
@@ -104,32 +157,64 @@ class _ClipsScreenState extends State<ClipsScreen> {
   }
 
   Widget _buildVideoPlayer(String videoUrl) {
-    return FutureBuilder<ChewieController>(
+    return FutureBuilder<ChewieController?>(
       future: _initializePlayer(File(videoUrl)),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return _buildErrorWidget('Error loading video: ${snapshot.error}');
+        } else if (snapshot.hasData && snapshot.data != null) {
           return Chewie(controller: snapshot.data!);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return _buildErrorWidget('Failed to initialize video player');
         }
       },
     );
   }
 
-  Future<ChewieController> _initializePlayer(File videoFile) async {
-    final videoPlayerController = VideoPlayerController.file(videoFile);
-    await videoPlayerController.initialize();
-    
-    return ChewieController(
-      videoPlayerController: videoPlayerController,
-      autoPlay: false,
-      looping: false,
-      showControls: true,
-      allowFullScreen: true,
-      allowMuting: false,
-      aspectRatio: videoPlayerController.value.aspectRatio,
-      placeholder: Container(color: Colors.black),
+  Widget _buildErrorWidget(String message) {
+    return Container(
+      color: Colors.black,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.error_outline, color: Colors.white, size: 48),
+            const SizedBox(height: 16),
+            Text(
+              message,
+              style: const TextStyle(color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
     );
+  }
+
+  Future<ChewieController?> _initializePlayer(File videoFile) async {
+    try {
+      final videoPlayerController = VideoPlayerController.file(videoFile);
+      await videoPlayerController.initialize();
+      
+      return ChewieController(
+        videoPlayerController: videoPlayerController,
+        autoPlay: false,
+        looping: false,
+        showControls: true,
+        allowFullScreen: true,
+        allowMuting: false,
+        aspectRatio: videoPlayerController.value.aspectRatio,
+        placeholder: Container(color: Colors.black),
+        errorBuilder: (context, errorMessage) {
+          return _buildErrorWidget(errorMessage);
+        },
+      );
+    } catch (e) {
+      debugPrint('Error initializing video player: $e');
+      return null;
+    }
   }
 
   Widget _buildSideBar(int index) {

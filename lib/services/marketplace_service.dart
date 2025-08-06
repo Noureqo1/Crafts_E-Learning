@@ -23,46 +23,123 @@ class MarketplaceService extends ChangeNotifier {
       
       // Mock data
       _items = [
+        // Carpentry Tools
         CraftItem(
           id: '1',
-          title: 'Handmade Ceramic Mug',
-          description: 'Beautiful handcrafted ceramic mug, perfect for your morning coffee.',
-          price: 24.99,
-          sellerId: 'seller1',
-          sellerName: 'Artisan Crafts',
-          category: 'Home & Living',
-          stock: 10,
-          rating: 4.8,
-          reviewCount: 124,
-          isAvailable: true,
-        ),
-        CraftItem(
-          id: '2',
-          title: 'Crochet Blanket',
-          description: 'Soft and cozy crochet blanket, made with love and care.',
+          title: 'Professional Wood Chisel Set',
+          description: 'High-quality 6-piece wood chisel set with leather roll. Perfect for fine woodworking and detailed carpentry projects.',
           price: 89.99,
-          sellerId: 'seller2',
-          sellerName: 'Cozy Creations',
-          category: 'Home & Living',
-          stock: 3,
+          sellerId: 'woodcraft_tools',
+          sellerName: 'WoodCraft Tools',
+          category: 'Carpentry Tools',
+          stock: 15,
           rating: 4.9,
           reviewCount: 87,
           isAvailable: true,
         ),
         CraftItem(
-          id: '3',
-          title: 'Wooden Phone Stand',
-          description: 'Elegant wooden phone stand, perfect for your desk or nightstand.',
-          price: 19.99,
-          sellerId: 'seller3',
-          sellerName: 'Wooden Wonders',
-          category: 'Electronics',
-          stock: 15,
-          rating: 4.6,
-          reviewCount: 56,
+          id: '2',
+          title: 'Japanese Pull Saw',
+          description: 'Premium Japanese-style pull saw with dual cutting edges. Excellent for precision woodworking and fine joinery.',
+          price: 45.50,
+          sellerId: 'eastern_woodworks',
+          sellerName: 'Eastern Woodworks',
+          category: 'Carpentry Tools',
+          stock: 8,
+          rating: 4.8,
+          reviewCount: 64,
           isAvailable: true,
         ),
-        // Add more mock items as needed
+        
+        // Wood Materials
+        CraftItem(
+          id: '3',
+          title: 'Premium Walnut Wood Plank',
+          description: 'Kiln-dried American black walnut, 1" x 8" x 48". Perfect for furniture making and decorative projects.',
+          price: 75.00,
+          sellerId: 'fine_lumber_co',
+          sellerName: 'Fine Lumber Co.',
+          category: 'Wood Materials',
+          stock: 5,
+          rating: 4.7,
+          reviewCount: 32,
+          isAvailable: true,
+        ),
+        
+        // Handmade Furniture
+        CraftItem(
+          id: '4',
+          title: 'Handcrafted Oak Dining Table',
+          description: 'Solid oak dining table, handcrafted with traditional joinery. Seats 6-8 people. Custom sizes available.',
+          price: 1200.00,
+          sellerId: 'artisan_furniture',
+          sellerName: 'Artisan Furniture Co.',
+          category: 'Furniture',
+          stock: 2,
+          rating: 5.0,
+          reviewCount: 18,
+          isAvailable: true,
+        ),
+        
+        // Woodworking Plans
+        CraftItem(
+          id: '5',
+          title: 'Complete Woodworking Plans Collection',
+          description: 'Digital download of 50+ professional woodworking plans including furniture, decor, and shop projects.',
+          price: 29.99,
+          sellerId: 'diy_plans',
+          sellerName: 'DIY Wood Plans',
+          category: 'Plans & Guides',
+          stock: 1000, // Digital item
+          rating: 4.9,
+          reviewCount: 143,
+          isAvailable: true,
+        ),
+        
+        // Workshop Equipment
+        CraftItem(
+          id: '6',
+          title: 'Professional Workbench with Vise',
+          description: 'Heavy-duty workbench with front vise and tool well. Perfect for all your woodworking needs.',
+          price: 450.00,
+          sellerId: 'woodcraft_tools',
+          sellerName: 'WoodCraft Tools',
+          category: 'Workshop Equipment',
+          stock: 3,
+          rating: 4.8,
+          reviewCount: 27,
+          isAvailable: true,
+        ),
+        
+        // Finishing Supplies
+        CraftItem(
+          id: '7',
+          title: 'Natural Wood Finish Kit',
+          description: 'All-natural wood finish kit including oil, wax, and applicators. Safe for food contact surfaces.',
+          price: 34.99,
+          sellerId: 'natural_wood_co',
+          sellerName: 'Natural Wood Co.',
+          category: 'Finishing Supplies',
+          stock: 12,
+          rating: 4.6,
+          reviewCount: 42,
+          isAvailable: true,
+        ),
+        
+        // Hand Tools
+        CraftItem(
+          id: '8',
+          title: 'Premium Dovetail Saw',
+          description: 'Handcrafted dovetail saw with Japanese steel blade and walnut handle. Perfect for fine joinery work.',
+          price: 125.00,
+          sellerId: 'eastern_woodworks',
+          sellerName: 'Eastern Woodworks',
+          category: 'Carpentry Tools',
+          stock: 5,
+          rating: 4.9,
+          reviewCount: 38,
+          isAvailable: true,
+        ),
       ];
 
       // Filter by category if provided

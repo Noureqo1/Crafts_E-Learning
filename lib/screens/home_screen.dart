@@ -6,7 +6,7 @@ import '../helper/global.dart';
 import '../helper/pref.dart';
 import '../services/localization_service.dart';
 import 'crafts.dart';
-import 'learn.dart';
+import 'career_screen.dart';  
 import 'clips.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // List of screens to navigate between
   final List<Widget> _screens = [
     const CraftsScreen(),
-    const LearnScreen(),
+    const CareerScreen(),  
     const ClipsScreen(),
   ];
 
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('app_name'.tr),
+        title: const Text("EDUNA"),
         actions: [
           // Language switcher
           IconButton(
@@ -97,15 +97,15 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
-            icon: const Icon(Icons.handyman),
+            icon: Icon(Icons.handyman),
             label: 'craft'.tr,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.school),
-            label: 'learn'.tr,
+            icon: Icon(Icons.work),
+            label: 'career'.tr,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.video_library),
+            icon: Icon(Icons.video_library),
             label: 'clips'.tr,
           ),
         ],

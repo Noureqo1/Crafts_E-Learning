@@ -15,7 +15,7 @@ EDUNA is a comprehensive Flutter application that combines AI-powered learning, 
 
 ## 🎥 Demo
 
-[![EDUNA Demo Video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtube.com/shorts/QeMDQRsB2EQ)
+[![EDUNA Demo Video](https://cdn-icons-png.flaticon.com/512/1384/1384060.png)](https://youtube.com/shorts/QeMDQRsB2EQ)
 
 *Click the image above to watch the demo video*
 
@@ -24,13 +24,13 @@ EDUNA is a comprehensive Flutter application that combines AI-powered learning, 
 ### Onboarding Experience
 | Onboarding 1 | Onboarding 2 | Onboarding 3 |
 |--------------|--------------|--------------|
-| <img src="Readme/Onboarding1.png" width="200" /> | <img src="Readme/Onboarding2.png" width="200" /> | <img src="Readme/Onboarding3.png" width="200" /> |
+| <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding1.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding2.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding3.png" width="200" /> |
 | Introduction to EDUNA | Explore Courses | Start Learning |
 
 ### Main Features
 | Role Selection | Career Screen | Clips |
 |----------------|----------------|--------|
-| <img src="Readme/role.png" width="200" /> | <img src="Readme/career.png" width="200" /> | <img src="Readme/clips.png" width="200" /> |
+| <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/role.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/career.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/clips.png" width="200" /> |
 | Choose your role | Career development | Short video clips |
 
 ### Marketplace & Learning
@@ -81,12 +81,6 @@ EDUNA is a comprehensive Flutter application that combines AI-powered learning, 
 - **Animations**: Lottie, Flutter Animate
 - **UI Components**: Material Design 3, Cupertino
 - **Internationalization**: Flutter Intl
-
-## 📱 Screenshots
-
-| Splash Screen | Onboarding | Home Screen |
-|--------------|------------|-------------|
-| <img src="screenshots/splash.png" width=200> | <img src="screenshots/onboarding.png" width=200> | <img src="screenshots/home.png" width=200> |
 
 ## 📂 Project Structure
 

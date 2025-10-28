@@ -1,5 +1,6 @@
 # EDUNA - AI-Powered Crafts E-Learning Platform
 
+
 ![EDUNA Logo](assets/images/logo.png)
 
 EDUNA is a comprehensive Flutter application that combines AI-powered learning, skill development, and marketplace features to create an engaging educational experience. The app supports multiple languages (English and Arabic) and features a responsive design that works on both mobile and web platforms.

@@ -25,13 +25,13 @@ EDUNA is a comprehensive Flutter application that combines AI-powered learning, 
 ### Onboarding Experience
 | Onboarding 1 | Onboarding 2 | Onboarding 3 |
 |--------------|--------------|--------------|
-| <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding1.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding2.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding3.png" width="200" /> |
+| <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding1.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/main/Readme/Onboarding2.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/Onboarding3.png" width="200" /> |
 | Introduction to EDUNA | Explore Courses | Start Learning |
 
 ### Main Features
 | Role Selection | Career Screen | Clips |
 |----------------|----------------|--------|
-| <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/role.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/career.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/clips.png" width="200" /> |
+| <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/role.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/Nour/Readme/career.png" width="200" /> | <img src="https://raw.githubusercontent.com/noureqo1/Crafts_E-Learning/main/Readme/clips.png" width="200" /> |
 | Choose your role | Career development | Short video clips |
 
 ### Marketplace & Learning
